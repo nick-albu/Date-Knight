@@ -1,8 +1,9 @@
 import './Main.scss'
+import Hero from '../../components/Hero/Hero'
 
 function Main() {
     return (
-        <h1>This is the main page</h1>
+        <Hero/>
     )
 }
 
