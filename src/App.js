@@ -1,8 +1,16 @@
 import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Main from './pages/Main/Main';
 
 function App() {
   return (
-    <h1>Le Date KNIGHT</h1>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' exact element={ <Main/> } />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
