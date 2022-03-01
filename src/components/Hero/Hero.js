@@ -1,9 +1,12 @@
 import './Hero.scss'
+import HeroImg from '../../assets/images/dateknight.PNG'
 
 
 function Hero() {
     return (
-        <h1>Le Date KNIGHT</h1>
+        <div className='hero'>
+            <img className='hero__image' src={HeroImg} alt='date-knight-hero-img'/>
+        </div>
     )
 }
 
