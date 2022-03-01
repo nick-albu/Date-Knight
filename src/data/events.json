@@ -1,0 +1,67 @@
+[
+    {
+        "name": "Museum",
+        "details": [
+            {
+                "name": "The ROM",
+                "link": "a-specific-link"
+            },
+            {
+                "name": "Another fun museum",
+                "link": "another-specific-link"
+            }
+        ]
+    },
+    {
+        "name": "Art Gallery",
+        "details": [
+            {
+                "name": "AGO",
+                "link": "a-specific-link"
+            },
+            {
+                "name": "Another art gallery",
+                "link": "another-specific-link"
+            }
+        ]
+    },
+    {
+        "name": "Parks and Paths",
+        "details": [
+            {
+                "name": "A hiking trail",
+                "link": "a-specific-link"
+            },
+            {
+                "name": "Another fun hiking trail",
+                "link": "another-specific-link"
+            }
+        ]
+    },
+    {
+        "name": "Antiqueing",
+        "details": [
+            {
+                "name": "Antique Store",
+                "link": "a-specific-link"
+            },
+            {
+                "name": "Another fun antique store",
+                "link": "another-specific-link"
+            }
+        ]
+    },
+    {
+        "name": "Shopping",
+        "details": [
+            {
+                "name": "The Mall",
+                "link": "a-mall-website-I-guess"
+            },
+            {
+                "name": "Home Sense",
+                "link": "www.wheretimegoestodie.com"
+            }
+        ]
+    }
+]

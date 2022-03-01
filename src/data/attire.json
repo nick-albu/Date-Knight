@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Casual",
+        "details": "Where whatever we want, whatever feels good"
+    },
+    {
+        "name": "Dressed Up",
+        "details": "Let's get dressed up!"
+    },
+    {
+        "name": "I choose",
+        "Details": "I get to choose how fancy we get"
+    },
+    {
+        "name": "You choose",
+        "Details": "You get to choose how fancy we get"
+    },
+    {
+        "name": "Prom Night",
+        "details": "We have to pick a colour and both use this colour"
+    }
+]
