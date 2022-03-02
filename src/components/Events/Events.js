@@ -6,7 +6,7 @@ function Events() {
     return (
         <div className='events'>
             <div class="events___dropdown">
-                <button onclick="myFunction()" class="events__dropdownButton">Choose our food</button>
+                <button onclick="myFunction()" class="events__dropdownButton">Choose an Activity</button>
                 <div class="events__dropdownContent">
                     <a href="#home">Option 1</a>
                     <a href="#about">Option 2</a>
