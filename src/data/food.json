@@ -1,28 +1,22 @@
 [
     {
         "name": "Cook an old favourite",
-        "recipe": [
-            {
-                "name": "Mac No Cheese",
-                "ingedients": ["GF Pasta", "Fake Cheese"],
-                "instructions": "I don't know man just mix them together."
-            }
-        ]
+        "details": "Let's keep food simple tonight and make something we know how to do"
     },
     {
-        "name": "Cook an new recipe.",
-        "details": "Consult the cookbooks!"
+        "name": "Cook a new recipe.",
+        "details": "Let's get adventurous. Consult the cookbooks!"
     },
     {
         "name": "Eat out at an old favourite.",
-        "details": "Pick some place you've both enjoyed before and maybe try something new from the menu."
+        "details": "Pick some place we've both enjoyed before and maybe try something new from the menu."
     },
     {
         "name": "Try a new restaurant",
-        "details": "link-to-new-TO-restaurants"
+        "details": "Let's try someplace new tonight, has anything piqued your curiosity?"
     },
     {
         "name": "Picnic on the Roof",
-        "details": "Go get some picnic foods and find your best tablecloth"
+        "details": "Let's go get some picnic foods and find our best tablecloth"
     }
 ]
