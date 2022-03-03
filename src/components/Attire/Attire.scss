@@ -1,5 +1,17 @@
 .attire {
     background-color: darkkhaki;
     width: 100%;
-    height: 10rem;
+    min-height: 5rem;
+    &__dropdownContainer{
+        
+    }
+    &__dropdownButton{
+
+    }
+    &__dropdownContent{
+        display: flex;
+        flex-direction: column;
+        background-color: black;
+        height: 100%
+    }
 }

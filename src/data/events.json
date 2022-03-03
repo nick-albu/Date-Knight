@@ -1,67 +1,22 @@
 [
     {
-        "name": "Museum",
-        "details": [
-            {
-                "name": "The ROM",
-                "link": "a-specific-link"
-            },
-            {
-                "name": "Another fun museum",
-                "link": "another-specific-link"
-            }
-        ]
+        "name": "The ROM",
+        "details": "Let's go see what new exhibits are at The ROM"
     },
     {
-        "name": "Art Gallery",
-        "details": [
-            {
-                "name": "AGO",
-                "link": "a-specific-link"
-            },
-            {
-                "name": "Another art gallery",
-                "link": "another-specific-link"
-            }
-        ]
+        "name": "The AGO",
+        "details": "It's right around the corner, let's go!"
     },
     {
         "name": "Parks and Paths",
-        "details": [
-            {
-                "name": "A hiking trail",
-                "link": "a-specific-link"
-            },
-            {
-                "name": "Another fun hiking trail",
-                "link": "another-specific-link"
-            }
-        ]
+        "details": "Let's get in the car get out of the city, maybe we can find a nice hiking trail"
     },
     {
         "name": "Antiqueing",
-        "details": [
-            {
-                "name": "Antique Store",
-                "link": "a-specific-link"
-            },
-            {
-                "name": "Another fun antique store",
-                "link": "another-specific-link"
-            }
-        ]
+        "details": "Maybe we don't really need anything but it might be a fun day out"
     },
     {
         "name": "Shopping",
-        "details": [
-            {
-                "name": "The Mall",
-                "link": "a-mall-website-I-guess"
-            },
-            {
-                "name": "Home Sense",
-                "link": "www.wheretimegoestodie.com"
-            }
-        ]
+        "details": "Do we need anything for the apartment? Or maybe just a new outfit? Let's go!"
     }
 ]

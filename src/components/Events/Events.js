@@ -1,17 +1,41 @@
 import './Events.scss'
+import eventsArr from '../../data/events.json'
+import React, { useState } from "react";
 
 function Events() {
-    // I need to pull data from json files and map through the food options to create links for
-    // the dropdown list.
+
+    const [eventDropdown, setEventDropdown] = useState(false);
+    const [eventChoice, setEvent] = useState({});
+    
     return (
         <div className='events'>
-            <div class="events___dropdown">
-                <button onclick="myFunction()" class="events__dropdownButton">Choose an Activity</button>
-                <div class="events__dropdownContent">
-                    <a href="#home">Option 1</a>
-                    <a href="#about">Option 2</a>
-                    <a href="#contact">Option 3</a>
+            <div className="events___dropdownContainer">
+                <div>
+                <button onClick={() => {setEventDropdown(!eventDropdown); setEvent({})}} className="events__dropdownButton">Choose what we should do</button>
+                <button onClick={() => {
+                    setEventDropdown(false);
+                    setEvent(eventsArr[Math.floor(Math.random() * eventsArr.length)])
+                    }} className="events__randomButton">Jesus take the wheel</button>
                 </div>
+                {eventDropdown && (
+                    <div className="events__dropdownContent">
+                        {eventsArr.map((event)=>(
+                            <button onClick={() => {
+                                setEventDropdown(!eventDropdown); 
+                                setEvent(eventsArr.find(function(option, index) {
+                                    if (option.name === event.name)
+                                        return event.name
+                                }))
+                            }} className='events__drowdownItem' href="">{event.name}</button>
+                        ))}
+                    </div>
+                )}
+                {eventChoice && (
+                    <div>
+                        <p>{eventChoice.name}</p>
+                        <p>{eventChoice.details}</p>
+                    </div>
+                )}
             </div>
         </div>
     )

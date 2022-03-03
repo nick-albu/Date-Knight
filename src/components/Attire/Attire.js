@@ -1,17 +1,41 @@
 import './Attire.scss'
+import attireArr from '../../data/attire.json'
+import React, { useState } from "react";
 
 function Attire() {
-    // I need to pull data from json files and map through the food options to create links for
-    // the dropdown list.
+
+    const [attireDropdown, setAttireDropdown] = useState(false);
+    const [attireChoice, setAttire] = useState({});
+    
     return (
         <div className='attire'>
-            <div class="attire___dropdown">
-                <button onclick="myFunction()" class="attire__dropdownButton">Choose how we dress</button>
-                <div class="attire__dropdownContent">
-                    <a href="#home">Option 1</a>
-                    <a href="#about">Option 2</a>
-                    <a href="#contact">Option 3</a>
+            <div className="attire___dropdownContainer">
+                <div>
+                <button onClick={() => {setAttireDropdown(!attireDropdown); setAttire({})}} className="attire__dropdownButton">Choose our attire</button>
+                <button onClick={() => {
+                    setAttireDropdown(false);
+                    setAttire(attireArr[Math.floor(Math.random() * attireArr.length)])
+                    }} className="attire__randomButton">Jesus take the wheel</button>
                 </div>
+                {attireDropdown && (
+                    <div className="attire__dropdownContent">
+                        {attireArr.map((attire)=>(
+                            <button onClick={() => {
+                                setAttireDropdown(!attireDropdown); 
+                                setAttire(attireArr.find(function(option, index) {
+                                    if (option.name === attire.name)
+                                        return attire.name
+                                }))
+                            }} className='attire__drowdownItem' href="">{attire.name}</button>
+                        ))}
+                    </div>
+                )}
+                {attireChoice && (
+                    <div>
+                        <p>{attireChoice.name}</p>
+                        <p>{attireChoice.details}</p>
+                    </div>
+                )}
             </div>
         </div>
     )

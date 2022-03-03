@@ -4,19 +4,25 @@ import React, { useState } from "react";
 
 function Food() {
 
-    const [dropdown, setDropdown] = useState(false);
-    const [choice, setChoice] = useState({});
+    const [foodDropdown, setFoodDropdown] = useState(false);
+    const [foodChoice, setFood] = useState({});
     
     return (
         <div className='food'>
             <div className="food___dropdownContainer">
-                <button onClick={() => {setDropdown(!dropdown); setChoice({})}} className="food__dropdownButton">Choose our food</button>
-                {dropdown && (
+                <div>
+                <button onClick={() => {setFoodDropdown(!foodDropdown); setFood({})}} className="food__dropdownButton">Choose our food</button>
+                <button onClick={() => {
+                    setFoodDropdown(false);
+                    setFood(foodArr[Math.floor(Math.random() * foodArr.length)])
+                    }} className="food__randomButton">Jesus take the wheel</button>
+                </div>
+                {foodDropdown && (
                     <div className="food__dropdownContent">
                         {foodArr.map((food)=>(
                             <button onClick={() => {
-                                setDropdown(!dropdown); 
-                                setChoice(foodArr.find(function(option, index) {
+                                setFoodDropdown(!foodDropdown); 
+                                setFood(foodArr.find(function(option, index) {
                                     if (option.name === food.name)
                                         return food.name
                                 }))
@@ -24,10 +30,10 @@ function Food() {
                         ))}
                     </div>
                 )}
-                {choice && (
+                {foodChoice && (
                     <div>
-                        <p>{choice.name}</p>
-                        <p>{choice.details}</p>
+                        <p>{foodChoice.name}</p>
+                        <p>{foodChoice.details}</p>
                     </div>
                 )}
             </div>
