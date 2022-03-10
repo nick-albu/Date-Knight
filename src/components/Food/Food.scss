@@ -1,17 +1,39 @@
+@use '../../partials/variables' as *;
+
 .food {
-    background-color: bisque;
+    background-color: $jet;
     width: 100%;
     min-height: 5rem;
     &__dropdownContainer{
         
     }
+    &__buttonContainer {
+        width: 100%;
+        padding: .5rem;
+    }
     &__dropdownButton{
-
+        background-color: $primary;
+        color: white;
+	    padding: .5rem;
+	    cursor: pointer;
+	    outline: none;
+        border: none;
+    }
+    &__randomButton{
+        background-color: $primary;
+        color: white;
+	    padding: .5rem;
+	    cursor: pointer;
+	    outline: none;
+        border: none;
     }
     &__dropdownContent{
         display: flex;
         flex-direction: column;
         background-color: black;
         height: 100%
+    }
+    &__dropdownItem{
+
     }
 }
