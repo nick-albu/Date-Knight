@@ -20,16 +20,19 @@ function Attire() {
                 </div>
                 {attireDropdown && (
                     <ul className="attire__dropdownContent">
-                        {attireArr.map((attire)=>(
-                            <li className='attire__dropdownItem' onClick={() => {
-                                setAttireDropdown(!attireDropdown); 
-                                setAttire(attireArr.find(function(option, index) {
-                                    if (option.name === attire.name)
-                                        return attire.name
-                                }))
-                            }}>{attire.name}</li>
-                        ))}
-                    </ul>
+                    {attireArr.map((attire)=>{
+                        return (<li className='attire__dropdownItem' onClick={() => {
+                            setAttireDropdown(!attireDropdown); 
+                            setAttire(attireArr.find(function(option) {
+                                if (option.name === attire.name){
+                                    return attire.name
+                                } else {
+                                    return null
+                                }
+                            }))
+                        }}>{attire.name}</li>)    
+                    })}
+                </ul>
                 )}
                 {attireChoice && (
                     <div className='attire__choiceContainer'>

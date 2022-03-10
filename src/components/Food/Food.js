@@ -19,17 +19,20 @@ function Food() {
                         }}/>
                 </div>
                 {foodDropdown && (
-                <ul className="food__dropdownContent">
-                    {foodArr.map((food)=>(
-                        <li className='food__dropdownItem' onClick={() => {
-                            setFoodDropdown(!foodDropdown); 
-                            setFood(foodArr.find(function(option, index) {
-                                if (option.name === food.name)
-                                    return food.name
-                            }))
-                        }}>{food.name}</li>
-                    ))}
-                </ul>
+                    <ul className="food__dropdownContent">
+                        {foodArr.map((food)=>{
+                            return (<li className='food__dropdownItem' onClick={() => {
+                                setFoodDropdown(!foodDropdown); 
+                                setFood(foodArr.find(function(option) {
+                                    if (option.name === food.name){
+                                        return food.name
+                                    } else {
+                                        return null
+                                    }
+                                }))
+                            }}>{food.name}</li>)    
+                        })}
+                    </ul>
                 )}
                 {foodChoice && (
                     <div className='food__choiceContainer'>

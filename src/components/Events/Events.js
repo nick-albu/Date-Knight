@@ -20,15 +20,18 @@ function Events() {
                 </div>
                 {eventDropdown && (
                     <ul className="events__dropdownContent">
-                        {eventsArr.map((event)=>(
-                            <li className='events__dropdownItem' onClick={() => {
-                                setEventDropdown(!eventDropdown); 
-                                setEvent(eventsArr.find(function(option, index) {
-                                    if (option.name === event.name)
-                                        return event.name
-                                }))
-                            }}>{event.name}</li>
-                        ))}
+                    {eventsArr.map((event)=>{
+                        return (<li className='events__dropdownItem' onClick={() => {
+                            setEventDropdown(!eventDropdown); 
+                            setEvent(eventsArr.find(function(option) {
+                                if (option.name === event.name){
+                                    return event.name
+                                } else {
+                                    return null
+                                }
+                            }))
+                        }}>{event.name}</li>)    
+                    })}
                     </ul>
                 )}
                 {eventChoice && (
