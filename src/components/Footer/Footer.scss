@@ -3,11 +3,19 @@
 .footer {
     width: 100%;
     background-color: $primary;
+    display: flex;
+    justify-content: center ;
     &__text {
         margin: 0;
-        padding: 0.2rem 1rem;
+        padding: 0.2rem 0.2rem 0.2rem 1rem;
         font-size: 0.8rem;
         color: cornsilk;
         text-align: center;
+    }
+    &__link {
+        color: white;
+        font-size: 0.8rem;
+        margin-top: 2px;
+        cursor: pointer;
     }
 }

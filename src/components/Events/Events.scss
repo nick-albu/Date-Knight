@@ -29,11 +29,15 @@
 	    outline: none;
         border: none;
         box-shadow: 5px 10px 8px  #0e0e0e;
+        &:hover {
+            background-color: $secondary;
+        }
     }
     &__randomIcon{
         background-color: $jet;
         height: 3rem;
         margin-left: 1rem;
+        cursor: pointer;
     }
     &__dropdownContent{
         width: 15rem;
@@ -52,6 +56,9 @@
         justify-content: center;
         align-items: center;
         cursor: pointer;
+        &:hover {
+            color: $secondary;
+        } 
     }
     &__choiceContainer{
         margin: 0 10rem;

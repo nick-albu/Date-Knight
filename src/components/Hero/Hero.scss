@@ -1,10 +1,14 @@
 @use '../../partials/variables' as *;
+@use '../../partials/mixins' as *;
 
 .hero {
     width: 100%;
     background-color: cornsilk;
     display: flex;
     justify-content: center;
+    @include desktopBreakpoint {
+        height: 65vh;
+    }
     &__header {
         max-width: 100%;
         height: auto;
@@ -19,6 +23,7 @@
     &__btmContainer {
         display: flex;
         width: 100%;
+        height: 15.5rem;
         justify-content: space-between;
     }
     &__descContainer {
@@ -26,6 +31,10 @@
     }
     &__description {
         font-size: 1.1rem;
+        margin: 0.5rem 0;
+        @include desktopBreakpoint {
+            margin: 1rem 0;
+        }
     }
     &__image {
         max-width: 100%;
