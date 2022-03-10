@@ -3,6 +3,7 @@ import Hero from '../../components/Hero/Hero'
 import Food from '../../components/Food/Food'
 import Events from '../../components/Events/Events'
 import Attire from '../../components/Attire/Attire'
+import Footer from '../../components/Footer/Footer'
 
 function Main() {
     return (
@@ -11,6 +12,7 @@ function Main() {
             <Food/>
             <Events/>
             <Attire/>
+            <Footer/>
         </>
     )
 }

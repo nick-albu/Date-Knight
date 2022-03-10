@@ -1,0 +1,12 @@
+@use '../../partials/variables' as *;
+
+.footer {
+    width: 100%;
+    background-color: $primary;
+    &__text {
+        margin: 0;
+        padding: 0.2rem 1rem;
+        font-size: 0.8rem;
+        color: cornsilk
+    }
+}
