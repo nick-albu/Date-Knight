@@ -4,14 +4,19 @@
     width: 100%;
     background-color: cornsilk;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     &__header {
-        max-width: 30rem;
+        max-width: 100%;
         height: auto;
         margin-bottom: 2rem;
     }
     &__container {
+        max-width: 30rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    &__btmContainer {
         display: flex;
         width: 100%;
         justify-content: space-between;
