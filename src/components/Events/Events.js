@@ -1,39 +1,40 @@
 import './Events.scss'
 import eventsArr from '../../data/events.json'
 import React, { useState } from "react";
+import Random from '../../assets/images/random.png'
 
 function Events() {
 
     const [eventDropdown, setEventDropdown] = useState(false);
-    const [eventChoice, setEvent] = useState({});
+    const [eventChoice, setEvent] = useState(null);
     
     return (
         <div className='events'>
-            <div className="events___dropdownContainer">
-                <div>
-                <button onClick={() => {setEventDropdown(!eventDropdown); setEvent({})}} className="events__dropdownButton">Choose what we should do</button>
-                <button onClick={() => {
+            <div className="events__container">
+                <div className="events__buttonContainer">
+                <button onClick={() => {setEventDropdown(!eventDropdown); setEvent(null)}} className="events__dropdownButton">Choose an activity</button>
+                <img className='events__randomIcon' src={Random} alt='dice icon' onClick={() => {
                     setEventDropdown(false);
                     setEvent(eventsArr[Math.floor(Math.random() * eventsArr.length)])
-                    }} className="events__randomButton">Jesus take the wheel</button>
+                    }} />
                 </div>
                 {eventDropdown && (
-                    <div className="events__dropdownContent">
+                    <ul className="events__dropdownContent">
                         {eventsArr.map((event)=>(
-                            <button onClick={() => {
+                            <li className='events__dropdownItem' onClick={() => {
                                 setEventDropdown(!eventDropdown); 
                                 setEvent(eventsArr.find(function(option, index) {
                                     if (option.name === event.name)
                                         return event.name
                                 }))
-                            }} className='events__drowdownItem' href="">{event.name}</button>
+                            }}>{event.name}</li>
                         ))}
-                    </div>
+                    </ul>
                 )}
                 {eventChoice && (
-                    <div>
-                        <p>{eventChoice.name}</p>
-                        <p>{eventChoice.details}</p>
+                    <div className='events__choiceContainer'>
+                        <h2 className='events__choiceName'>{eventChoice.name}</h2>
+                        <p className='events__choiceDetails'>{eventChoice.details}</p>
                     </div>
                 )}
             </div>

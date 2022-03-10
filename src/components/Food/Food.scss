@@ -4,36 +4,67 @@
     background-color: $jet;
     width: 100%;
     min-height: 5rem;
-    &__dropdownContainer{
-        
+    &__container{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     &__buttonContainer {
         width: 100%;
-        padding: .5rem;
+        padding: 1rem 0 1rem;
+        min-height: 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     &__dropdownButton{
+        margin-left: 5rem;
         background-color: $primary;
         color: white;
+        font-size: 1.4rem;
 	    padding: .5rem;
 	    cursor: pointer;
 	    outline: none;
         border: none;
+        box-shadow: 5px 10px 8px  #0e0e0e;
     }
-    &__randomButton{
-        background-color: $primary;
-        color: white;
-	    padding: .5rem;
-	    cursor: pointer;
-	    outline: none;
-        border: none;
+    &__randomIcon{
+        background-color: $jet;
+        height: 4rem;
+        margin-left: 1rem;
     }
     &__dropdownContent{
+        margin: 0 0 1.5rem 0;
+        padding: 0;
         display: flex;
         flex-direction: column;
-        background-color: black;
         height: 100%
     }
     &__dropdownItem{
-
+        max-width: 18rem;
+        color: white;
+        font-size: 1.2rem;
+        margin: 0.2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+    &__choiceContainer{
+        margin: 0 10rem;
+        width: 25rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__choiceName{
+        color: white;
+        margin: 0 0 1rem 0;
+    }
+    &__choiceDetails{
+        color: white;
+        font-size: 1.2rem;
+        text-align: center;
     }
 }

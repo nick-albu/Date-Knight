@@ -1,39 +1,40 @@
 import './Food.scss'
 import foodArr from '../../data/food.json'
 import React, { useState } from "react";
+import Random from '../../assets/images/random.png'
 
 function Food() {
 
     const [foodDropdown, setFoodDropdown] = useState(false);
-    const [foodChoice, setFood] = useState({});
+    const [foodChoice, setFood] = useState(null);
     
     return (
         <div className='food'>
-            <div className="food___dropdownContainer">
-                <div className="food___buttonContainer">
-                    <button onClick={() => {setFoodDropdown(!foodDropdown); setFood({})}} className="food__dropdownButton">Choose our food</button>
-                    <button onClick={() => {
+            <div className="food__container">
+                <div className="food__buttonContainer">
+                    <button onClick={() => {setFoodDropdown(!foodDropdown); setFood(null)}} className="food__dropdownButton">Choose our food</button>
+                    <img className='food__randomIcon' src={Random} alt='dice icon' onClick={() => {
                         setFoodDropdown(false);
                         setFood(foodArr[Math.floor(Math.random() * foodArr.length)])
-                        }} className="food__randomButton">Jesus take the wheel</button>
+                        }}/>
                 </div>
                 {foodDropdown && (
-                    <div className="food__dropdownContent">
-                        {foodArr.map((food)=>(
-                            <button onClick={() => {
-                                setFoodDropdown(!foodDropdown); 
-                                setFood(foodArr.find(function(option, index) {
-                                    if (option.name === food.name)
-                                        return food.name
-                                }))
-                            }} className='food__drowdownItem' href="">{food.name}</button>
-                        ))}
-                    </div>
+                <ul className="food__dropdownContent">
+                    {foodArr.map((food)=>(
+                        <li className='food__dropdownItem' onClick={() => {
+                            setFoodDropdown(!foodDropdown); 
+                            setFood(foodArr.find(function(option, index) {
+                                if (option.name === food.name)
+                                    return food.name
+                            }))
+                        }}>{food.name}</li>
+                    ))}
+                </ul>
                 )}
                 {foodChoice && (
-                    <div>
-                        <p>{foodChoice.name}</p>
-                        <p>{foodChoice.details}</p>
+                    <div className='food__choiceContainer'>
+                        <h2 className='food__choiceName'>{foodChoice.name}</h2>
+                        <p className='food__choiceDetails'>{foodChoice.details}</p>
                     </div>
                 )}
             </div>

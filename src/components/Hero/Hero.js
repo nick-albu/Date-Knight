@@ -1,5 +1,5 @@
 import './Hero.scss'
-import HeroImg from '../../assets/images/dateknight.PNG'
+import HeroImg from '../../assets/images/thedateknight.png'
 
 
 function Hero() {
