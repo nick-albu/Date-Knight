@@ -16,6 +16,15 @@ function Attire() {
                 <img className='attire__randomIcon' src={Random} alt='dice icon' onClick={() => {
                     setAttireDropdown(false);
                     setAttire(attireArr[Math.floor(Math.random() * attireArr.length)])
+                    const attireName = document.getElementById('attirename')
+                    attireName.classList.remove('attire__choiceName'); // reset animation
+                    void attireName.offsetWidth; // trigger reflow
+                    attireName.classList.add('attire__choiceName'); // start animation
+
+                    const attireDetails = document.getElementById('attiredetails')
+                    attireDetails.classList.remove('attire__choiceDetails'); // reset animation
+                    void attireDetails.offsetWidth; // trigger reflow
+                    attireDetails.classList.add('attire__choiceDetails'); // start animation
                     }} />
                 </div>
                 {attireDropdown && (
@@ -36,8 +45,8 @@ function Attire() {
                 )}
                 {attireChoice && (
                     <div className='attire__choiceContainer'>
-                        <h2 className='attire__choiceName'>{attireChoice.name}</h2>
-                        <p className='attire__choiceDetails'>{attireChoice.details}</p>
+                        <h2 className='attire__choiceName' id='attirename'>{attireChoice.name}</h2>
+                        <p className='attire__choiceDetails' id='attiredetails'>{attireChoice.details}</p>
                     </div>
                 )}
             </div>

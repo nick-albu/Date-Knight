@@ -16,6 +16,15 @@ function Events() {
                 <img className='events__randomIcon' src={Random} alt='dice icon' onClick={() => {
                     setEventDropdown(false);
                     setEvent(eventsArr[Math.floor(Math.random() * eventsArr.length)])
+                    const eventsName = document.getElementById('eventsname')
+                    eventsName.classList.remove('events__choiceName'); // reset animation
+                    void eventsName.offsetWidth; // trigger reflow
+                    eventsName.classList.add('events__choiceName'); // start animation
+
+                    const eventsDetails = document.getElementById('eventsdetails')
+                    eventsDetails.classList.remove('events__choiceDetails'); // reset animation
+                    void eventsDetails.offsetWidth; // trigger reflow
+                    eventsDetails.classList.add('events__choiceDetails'); // start animation
                     }} />
                 </div>
                 {eventDropdown && (
@@ -36,8 +45,8 @@ function Events() {
                 )}
                 {eventChoice && (
                     <div className='events__choiceContainer'>
-                        <h2 className='events__choiceName'>{eventChoice.name}</h2>
-                        <p className='events__choiceDetails'>{eventChoice.details}</p>
+                        <h2 className='events__choiceName' id='eventsname'>{eventChoice.name}</h2>
+                        <p className='events__choiceDetails' id='eventsdetails'>{eventChoice.details}</p>
                     </div>
                 )}
             </div>

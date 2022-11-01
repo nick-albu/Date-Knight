@@ -16,6 +16,15 @@ function Food() {
                     <img className='food__randomIcon' src={Random} alt='dice icon' onClick={() => {
                         setFoodDropdown(false);
                         setFood(foodArr[Math.floor(Math.random() * foodArr.length)])
+                        const foodName = document.getElementById('foodname')
+                        foodName.classList.remove('food__choiceName'); // reset animation
+                        void foodName.offsetWidth; // trigger reflow
+                        foodName.classList.add('food__choiceName'); // start animation
+
+                        const foodDetails = document.getElementById('fooddetails')
+                        foodDetails.classList.remove('food__choiceDetails'); // reset animation
+                        void foodDetails.offsetWidth; // trigger reflow
+                        foodDetails.classList.add('food__choiceDetails'); // start animation
                         }}/>
                 </div>
                 {foodDropdown && (
@@ -36,8 +45,8 @@ function Food() {
                 )}
                 {foodChoice && (
                     <div className='food__choiceContainer'>
-                        <h2 className='food__choiceName'>{foodChoice.name}</h2>
-                        <p className='food__choiceDetails'>{foodChoice.details}</p>
+                        <h2 className='food__choiceName' id='foodname'>{foodChoice.name}</h2>
+                        <p className='food__choiceDetails' id='fooddetails'>{foodChoice.details}</p>
                     </div>
                 )}
             </div>
